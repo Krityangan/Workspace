@@ -1,0 +1,30 @@
+package com.customer.datamodel;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+
+@Data
+public class Address {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@JsonProperty("")
+	private String addressLine1;
+	@JsonProperty("")
+	private String addressLine2;
+	@JsonProperty("")
+	private String state;
+	@JsonProperty("")
+	private String landmark;
+	@JsonProperty("")
+	private String pincode;
+	@JsonProperty("")
+	private String country;
+}

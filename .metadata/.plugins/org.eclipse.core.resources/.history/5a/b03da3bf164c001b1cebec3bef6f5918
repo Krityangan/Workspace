@@ -1,0 +1,6 @@
+package com.customer.datamodel;
+
+//@Data
+public class Customer {
+
+}

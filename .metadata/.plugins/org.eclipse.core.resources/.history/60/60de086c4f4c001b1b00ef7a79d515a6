@@ -1,0 +1,8 @@
+package com.customer.service;
+
+import javax.transaction.Transactional;
+
+@Transactional
+public class CustomerService {
+
+}
