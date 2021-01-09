@@ -19,7 +19,7 @@ public class Application {
 	 
 	 private void start()
 	 {
-		 logger.info("Service Started");
+		 logger.info("Service Started at port 8080");
 	 }
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
