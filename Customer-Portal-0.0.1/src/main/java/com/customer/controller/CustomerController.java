@@ -3,9 +3,12 @@ package com.customer.controller;
 import java.awt.PageAttributes.MediaType;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,8 +45,10 @@ public class CustomerController {
 
 	
 	@RequestMapping(value=URLConstants.REST_SAVE_PROJECT_DETAILS, method = RequestMethod.POST)
-	public ResponseEntity<Project> saveProject(@RequestBody Project project)
+	public ResponseEntity<?> saveProject(@Valid @RequestBody Project project,BindingResult result)
 	{
+		if(result.hasErrors())
+			return new ResponseEntity<String>("Inavlid Project Object",HttpStatus.BAD_REQUEST);
 		projectService.save(project);	
 		return new ResponseEntity<>(project,HttpStatus.CREATED);
 	}
