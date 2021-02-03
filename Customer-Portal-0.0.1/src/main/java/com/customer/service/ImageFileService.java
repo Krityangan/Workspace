@@ -29,9 +29,9 @@ public class ImageFileService {
         		throw new IOException("Sorry! Filename contains invalid path sequence " + fileName);
         	}
         	ImageFile imageFile=new ImageFile();
-        	imageFile.setFileName(fileName);
-        	imageFile.setData(file.getBytes());
-        	imageFile.setFileType(file.getContentType());
+//        	imageFile.setFileName(fileName);
+//        	imageFile.setData(file.getBytes());
+//        	imageFile.setFileType(file.getContentType());
         	
         	return imageRepo.save(imageFile);
         }

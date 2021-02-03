@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Admin\Documents\Personal\Workspace"/>
 			<item value="/gitrepository/Personal/Workspace/Customer-Portal-0.0.1"/>
 		</list>
 		<list key="projectNameTemplate">
