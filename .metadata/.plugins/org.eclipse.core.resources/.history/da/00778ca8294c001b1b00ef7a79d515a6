@@ -1,0 +1,32 @@
+package com.customer.datamodel;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+
+@Data
+@Table(name="customer_basic")
+public class Customer {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@JsonProperty("name")
+	private String name;
+	
+	@JsonProperty("")
+	private String emailID;
+	
+	@JsonProperty("")
+	private String mobile;
+	
+	@JsonProperty("")
+	@OneToMany(fetch = FetchType.EAGER, targetEntity = Name.class, cascade = CascadeType.ALL)
+	private List<Address> address;
+}

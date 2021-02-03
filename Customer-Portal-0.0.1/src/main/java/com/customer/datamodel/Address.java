@@ -1,7 +1,10 @@
 package com.customer.datamodel;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> practise
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
