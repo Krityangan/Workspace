@@ -58,10 +58,9 @@ public class Customer implements Serializable {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dob;
 	
-	@JsonProperty("image")
-
-	@OneToOne(fetch = FetchType.EAGER, targetEntity = Image.class, cascade = CascadeType.ALL)
-	private Image image;
+//	@JsonProperty("image")
+//	@OneToOne(fetch = FetchType.EAGER, targetEntity = Image.class, cascade = CascadeType.ALL)
+//	private Image image;
 
 //	@OneToMany(fetch = FetchType.EAGER, targetEntity = ImageFile.class, cascade = CascadeType.ALL)
 //	@Fetch(value = FetchMode.SUBSELECT)

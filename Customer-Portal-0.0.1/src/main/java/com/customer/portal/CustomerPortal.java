@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ComponentScan(basePackages = { "com" })
 @EnableJpaRepositories(basePackages = { "com" })
 @EnableAsync
-public class Application {
+public class CustomerPortal {
 	 Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 	 
 	 private void start()
@@ -22,8 +22,8 @@ public class Application {
 		 logger.info("Service Started at port 8080");
 	 }
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-		new Application().start();
+		SpringApplication.run(CustomerPortal.class, args);
+		new CustomerPortal().start();
 	}
 
 }

@@ -42,22 +42,18 @@ public class CustomerController {
 	private ImageFileRepository imageRepo;
 	
 	@RequestMapping(value=URLConstants.REST_SAVE_CUSTOMER_RECORDS, method = RequestMethod.POST)
-	public ResponseEntity<?> getCustomer(BindingResult result)
-	{
-		if(result.hasErrors())
-			return new ResponseEntity<List<FieldError>>(result.getFieldErrors(),HttpStatus.BAD_REQUEST);
-		
-		return new ResponseEntity<>(customerRepository.findAll(),HttpStatus.CREATED);
-	}
-	
-	@RequestMapping(value=URLConstants.REST_GET_CUSTOMER_DETAILS, method = RequestMethod.GET)
 	public ResponseEntity<?> saveCustomer(@Valid @RequestBody Customer customer, BindingResult result)
 	{
 		if(result.hasErrors())
 			return new ResponseEntity<List<FieldError>>(result.getFieldErrors(),HttpStatus.BAD_REQUEST);
+		
+		return new ResponseEntity<>(customerRepository.save(customer),HttpStatus.CREATED);
+	}
 	
-		customerRepository.save(customer);	
-		return new ResponseEntity<>(customer,HttpStatus.CREATED);
+	@RequestMapping(value=URLConstants.REST_GET_CUSTOMER_DETAILS, method = RequestMethod.GET)
+	public ResponseEntity<?> getCustomer()
+	{
+		return new ResponseEntity<>(customerRepository.findAll(),HttpStatus.ACCEPTED);
 	}
 	
 
